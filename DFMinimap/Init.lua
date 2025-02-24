@@ -74,7 +74,7 @@ function DFMinimap:OnInitialize()
         if (addonName == "Blizzard_TimeManager") then
             TimeManagerClockButton:SetParent(MinimapCluster);
             TimeManagerClockButton:ClearAllPoints();
-            TimeManagerClockButton:SetPoint("TOPRIGHT", MinimapBorderTop, -47, -235);
+            TimeManagerClockButton:SetPoint("TOPRIGHT", MinimapBorderTop, -48, -235);
             TimeManagerClockButton:DisableDrawLayer("BORDER")
 
             GameTimeFrame:SetParent(MinimapCluster);
