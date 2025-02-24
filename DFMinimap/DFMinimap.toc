@@ -1,0 +1,8 @@
+## Interface: 90005
+## Title: Dragonflight Minimap
+## Author: ludwici
+## DefaultState: Enabled
+## Version: 1.4
+
+DFMinimap.xml
+
