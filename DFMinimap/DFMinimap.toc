@@ -1,8 +1,8 @@
-## Interface: 90005
+## Interface: 20502
 ## Title: Dragonflight Minimap
-## Author: ludwici
+## Author: ludwici, modified by Macumba
 ## DefaultState: Enabled
-## Version: 1.4
+## Version: 1.4 tbcc
 
 DFMinimap.xml
 wotlk.lua

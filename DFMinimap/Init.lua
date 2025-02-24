@@ -74,7 +74,7 @@ function DFMinimap:OnInitialize()
         if (addonName == "Blizzard_TimeManager") then
             TimeManagerClockButton:SetParent(MinimapCluster);
             TimeManagerClockButton:ClearAllPoints();
-            TimeManagerClockButton:SetPoint("TOPRIGHT", MinimapBorderTop, -48, -235);
+            TimeManagerClockButton:SetPoint("TOPRIGHT", Minimap, -68, -197);
             TimeManagerClockButton:DisableDrawLayer("BORDER")
 
             GameTimeFrame:SetParent(MinimapCluster);
@@ -86,7 +86,7 @@ function DFMinimap:OnInitialize()
     self:RawHook("Minimap_UpdateRotationSetting", true);
 
     MinimapCluster:SetSize(256, 256);
-    Minimap:SetPoint("CENTER", MinimapCluster, "TOP", 10, -140);
+    Minimap:SetPoint("CENTER", MinimapCluster, "TOP", 20, -140);
     Minimap:SetSize(198, 198);
     Minimap:SetMaskTexture("Interface\\Characterframe\\tempportraitalphamask");
     MinimapBackdrop:SetPoint("CENTER", Minimap, 0, 0);
@@ -116,8 +116,19 @@ function DFMinimap:OnInitialize()
     end);
     MiniMapWorldMapButton:Hide();
     MinimapZoneText:SetSize(150, 12);
-    MinimapZoneText:SetPoint("LEFT", 16, 2);
-    MinimapZoneText:SetJustifyH("LEFT");
+    MinimapZoneText:SetPoint("CENTER", Minimap, "CENTER", 0, 125);
+    MinimapZoneText:SetJustifyH("CENTER");
     MinimapZoneText:SetJustifyV("MIDDLE");
 	MinimapZoneText:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
+	
+	local function MoveBuffs(buttonName, index)
+		if not (IsAddOnLoaded("Lorti-UI-Classic")) then
+			BuffFrame:ClearAllPoints()
+			BuffFrame:SetPoint("TOPRIGHT", UIParent, "TOPRIGHT", -220, -10)
+		else 
+			BuffFrame:ClearAllPoints()
+			BuffFrame:SetPoint("TOPRIGHT", UIParent, "TOPRIGHT", -140, -10)
+		end
+	end
+	hooksecurefunc("UIParent_UpdateTopFramePositions", MoveBuffs)
 end
