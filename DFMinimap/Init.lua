@@ -1,7 +1,7 @@
 DFMinimap = LibStub("AceAddon-3.0"):NewAddon("DFMinimap", "AceEvent-3.0", "AceHook-3.0");
 
 local level = GetExpansionLevel();
-if (level == 0) then -- vanila
+if (level == 1) then -- vanila
     DFMinimap.GameTimeFramePosition = {0, -30};
 else
     DFMinimap.GameTimeFramePosition = {-4, 0};
@@ -74,7 +74,7 @@ function DFMinimap:OnInitialize()
         if (addonName == "Blizzard_TimeManager") then
             TimeManagerClockButton:SetParent(MinimapCluster);
             TimeManagerClockButton:ClearAllPoints();
-            TimeManagerClockButton:SetPoint("TOPRIGHT", MinimapBorderTop, -4, 0);
+            TimeManagerClockButton:SetPoint("TOPRIGHT", MinimapBorderTop, -47, -235);
             TimeManagerClockButton:DisableDrawLayer("BORDER")
 
             GameTimeFrame:SetParent(MinimapCluster);
@@ -115,8 +115,9 @@ function DFMinimap:OnInitialize()
 		GameTooltip:Show();
     end);
     MiniMapWorldMapButton:Hide();
-    MinimapZoneText:SetSize(102, 12);
+    MinimapZoneText:SetSize(150, 12);
     MinimapZoneText:SetPoint("LEFT", 16, 2);
     MinimapZoneText:SetJustifyH("LEFT");
     MinimapZoneText:SetJustifyV("MIDDLE");
+	MinimapZoneText:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
 end
