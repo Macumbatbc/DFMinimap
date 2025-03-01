@@ -131,4 +131,7 @@ function DFMinimap:OnInitialize()
 		end
 	end
 	hooksecurefunc("UIParent_UpdateTopFramePositions", MoveBuffs)
+	
+	MiniMapMailFrame:ClearAllPoints();
+    MiniMapMailFrame:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", -4, 150);
 end
