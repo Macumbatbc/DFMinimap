@@ -134,4 +134,8 @@ function DFMinimap:OnInitialize()
 	
 	MiniMapMailFrame:ClearAllPoints();
     MiniMapMailFrame:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", -4, 150);
+	
+	MiniMapBattlefieldFrame:ClearAllPoints();
+    MiniMapBattlefieldFrame:SetPoint("BOTTOMLEFT", Minimap, "BOTTOMLEFT", 15, 5);
+--	MiniMapBattlefieldFrame:SetPoint("BOTTOMLEFT", Minimap, "BOTTOMLEFT", 0, 20);
 end
